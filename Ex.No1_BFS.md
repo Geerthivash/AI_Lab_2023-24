@@ -1,6 +1,6 @@
 # Ex.No: 1  Implementation of Breadth First Search 
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 07 - 03 - 25                                                                      
+### REGISTER NUMBER : 212223060067
 ### AIM: 
 To write a python program to implement Breadth first Search. 
 ### Algorithm:
@@ -14,18 +14,38 @@ To write a python program to implement Breadth first Search.
 8.   Stop the program.
 ### Program:
 
+```
+from collections import deque
 
 
+def bfs(graph, start):
+    while queue:
+        vertex = queue.popleft()
+        bfs_order.append(vertex)
+        for neighbor in graph[vertex]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+     return bfs_order
 
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
 
+start_vertex = 'A'
+order = bfs(graph, start_vertex)
+print("BFS Order:", order)
 
-
-
-
-
+```
 
 ### Output:
 
+![image](https://github.com/user-attachments/assets/6771e719-3d14-4c17-98f2-a0c76d2fd25f)
 
 
 ### Result:
